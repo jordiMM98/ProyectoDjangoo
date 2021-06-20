@@ -1,0 +1,16 @@
+<div class="pagination">
+	<p>paaaintauion</p>
+
+	{% if articles.has_previous %}
+		<a style="color: #1f7e58;" href="?page=1">&laquo; Primero</a>
+		<a style="color: #1f7e58;" href="?page={{ articles.previous_page_number }}">Anterior</a>
+	{% endif %}
+	<span class="actual">
+		Pagina {{articles.number}} de {{articles.paginator.num_pages}}
+	</span>
+	{% if articles.has_next %}
+		
+		<a  style="color: #1f7e58;" href="?page={{ articles.next_page_number }}">Siguiente</a>
+		<a style="color: #1f7e58;" href="?page={{articles.paginator.num_pages}}">Ultima &raquo;</a>
+	{% endif %}
+</div>

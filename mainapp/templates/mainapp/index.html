@@ -1,0 +1,26 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content%}
+	<h1>{{title}}</h1>
+	{%if messages%}
+		{% for message in messages %}
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{%endfor%}
+	{%endif%}
+	{%if user.email %}
+	<hr>
+	<h1>Bienvenido, {{request.user.first_name}} {{usr.last_name}}</h1>
+	<p>
+		{{user.email}}
+	</p>
+	{%else%}
+		<h2>Identificate para ver mas cosas</h2>
+	{%endif%}
+	
+	
+{% endblock %}
